@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
-puts "Hello World"
+require './lib/top_movies_2010s'
+
+TopMovies2010s::CLI.new.call 
