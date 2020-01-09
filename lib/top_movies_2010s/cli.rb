@@ -8,6 +8,9 @@ class TopMovies2010s::CLI
   
   def list_movies
     puts "names of movies"
+    
+    @movies = TopMovies2010s::Movies.all 
+    
   end
   
   def pick_one
