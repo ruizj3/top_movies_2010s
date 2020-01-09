@@ -22,8 +22,9 @@ class TopMovies2010s::CLI
     while input != "done"
       input = gets.strip.downcase 
       
-      if input.to_i > 0 
-        puts @movies[input.to_i - 1]
+      if input.to_i > 0
+        chosen_movie = @movies[input.to_i - 1]
+        puts "#{chosen_movie.title} - #{chosen_movie.year}"
       elsif input == "list"
         list_movies
       else puts "nothing for ya"

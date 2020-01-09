@@ -1,8 +1,12 @@
 class TopMovies2010s::Movies
   attr_accessor :title, :year 
   
-  def self.all 
-    # puts "some movies here"
+  def self.all
+    self.scrape_all_movies
+  end 
+  
+  def scrape_all_movies
+    final_movies = []
     
     movie_1 = self.new 
     movie_1.title = "so good"
@@ -13,7 +17,7 @@ class TopMovies2010s::Movies
     movie_2.year = '2011'
     
     
-    [movie_1,movie_2]
+    final_movies
   end 
   
 end 
