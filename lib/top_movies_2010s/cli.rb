@@ -10,6 +10,9 @@ class TopMovies2010s::CLI
     puts "names of movies"
     
     @movies = TopMovies2010s::Movies.all 
+    @movies.each.with_index(1) do |movie, i|
+      puts "#{i}. #{movie.title} - #{movie.year}"
+    end 
     
   end
   
@@ -18,16 +21,13 @@ class TopMovies2010s::CLI
     input = nil
     while input != "done"
       input = gets.strip.downcase 
-    
-      case input 
-      when "1"
-        puts "good"
-      when "2"
-        puts "bad"
-      when "list"
+      
+      if input.to_i > 0 
+        puts @movies[input.to_i - 1]
+      elsif input == "list"
         list_movies
-      else 
-        puts "No data for that rank!"
+      else puts "nothing for ya"
+      
     end
   end
     
