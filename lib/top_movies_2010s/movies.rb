@@ -5,7 +5,7 @@ class TopMovies2010s::Movies
     self.scrape_all_movies
   end 
   
-  def scrape_all_movies
+  def self.scrape_all_movies
     final_movies = []
     
     final_movies << self.scrape_avi 
