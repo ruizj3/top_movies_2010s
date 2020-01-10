@@ -7,27 +7,31 @@ class TopMovies2010s::CLI
   end 
   
   def list_movies
-    puts "names of movies"
+    puts "list of movies"
     
-    @movies = TopMovies2010s::Movies.all 
-    @movies.each.with_index(1) do |movie, i|
-      puts "#{i}. #{movie.title} - #{movie.year}"
+    @final_movies = TopMovies2010s::Movies.all 
+    @final_movies.each.with_index(1) do |movie, i|
+      puts "#{i}.#{movie.rank} - #{movie.title} - #{movie.release_year}"
     end 
     
   end
   
   def pick_one
+
     puts "Enter which movie rank you want to see:"
-    input = nil
-    while input != "done"
+    input = 0 
+    while input != "exit"
       input = gets.strip.downcase 
       
-      if input.to_i > 0
-        chosen_movie = @movies[input.to_i - 1]
-        puts "#{chosen_movie.title} - #{chosen_movie.year}"
+      
+      if input.to_i > 0  
+        chosen_movie = @final_movies[input.to_i - 1]
+        puts "#{chosen_movie.title} - #{chosen_movie.release_year}"
       elsif input == "list"
         list_movies
-      else puts "nothing for ya"
+      elsif input == "exit"
+        puts "Thank you!"
+      else "Error: No movie listed for that rank. Please choose another or exit program."
       
     end
   end
