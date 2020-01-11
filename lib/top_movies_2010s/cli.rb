@@ -27,7 +27,7 @@ class TopMovies2010s::CLI
       
       if input.to_i > 0  
         chosen_movie = @final_movies[input.to_i - 1]
-        puts "#{chosen_movie.mpaa_rating} - #{chosen_movie.genre} - #{chosen_movie.runtime}"
+        puts "#{chosen_movie.rank} - #{chosen_movie.title} - #{chosen_movie.release_year} - #{chosen_movie.mpaa_rating} - #{chosen_movie.genre} - #{chosen_movie.runtime}"
       elsif input == "list"
         list_movies
       elsif input == "exit"
