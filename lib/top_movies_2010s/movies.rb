@@ -12,7 +12,7 @@ class TopMovies2010s::Movies
     final_movies = []
     
   
- 
+    #binding.pry 
     (0..99).each do |i|
       movie = self.new
       
@@ -24,7 +24,7 @@ class TopMovies2010s::Movies
       movie.runtime = desc.search("span.runtime").children[i].text
       movie.genre = desc.search("span.genre").children[i].text.dump.gsub('\n', '').gsub('"','').gsub(' ','')
       
-      #movie.metascore = desc.search("div.inline-block.ratings-metascore")[i].text.dump.gsub('\n', '').scan(/\d+/).first.to_i
+      movie.metascore = desc.search("div.inline-block.ratings-metascore")[i] ? desc.search("div.inline-block.ratings-metascore")[i].text.dump.gsub('\n', '').scan(/\d+/).first.to_i : 'None'
     
       final_movies << movie
       

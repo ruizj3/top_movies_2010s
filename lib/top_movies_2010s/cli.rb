@@ -12,7 +12,7 @@ class TopMovies2010s::CLI
     @final_movies = TopMovies2010s::Movies.all
     #puts "********"
     @final_movies.each.with_index(1) do |movie, i|
-      puts "#{movie.rank} - #{movie.title} - #{movie.release_year}"
+      puts "#{movie.rank} - #{movie.title} - #{movie.release_year} - #{movie.metascore}"
     end 
     
   end
