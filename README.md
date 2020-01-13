@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This program is intended to pull the top 100 movies of the 2010s from IMDB's list. The user can select a movie from the list and see additional information all within their commmand line. Further develpment is possible to provide cast lists and a short description of the movie. These additional attributes have not been deemed necessary for this project.
 
 ## Development
 
