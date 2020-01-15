@@ -7,8 +7,8 @@ class TopMovies2010s::CLI
   end 
   
   def list_movies
-    #puts "list of movies"
-    
+
+    TopMovies2010s::ScrapeMovies.scrape_avi
     @final_movies = TopMovies2010s::Movies.all
     #puts "********"
     @final_movies.each.with_index(1) do |movie, i|
